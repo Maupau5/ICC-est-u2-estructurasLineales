@@ -24,6 +24,5 @@ public class App {
         System.out.println("Retirar-> "+stack.pop());
         System.out.println("Cima   -> "+stack.peek());
         System.out.println("Retirar-> "+stack.pop());
-        
     }
 }
