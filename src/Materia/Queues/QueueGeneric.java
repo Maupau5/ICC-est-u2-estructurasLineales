@@ -2,20 +2,20 @@ package Materia.Queues;
 
 import java.util.NoSuchElementException;
 
-import Materia.Models.Node;
+import Materia.Models.NodeGeneric;
 
-public class Queue {
-    private Node front; //Nodo al frente de la cola
-    private Node rear; // Nodo al fiinal de la cola
+public class QueueGeneric<T> {
+    private NodeGeneric<T> front; //Nodo al frente de la cola
+    private NodeGeneric<T> rear; // Nodo al fiinal de la cola
 
-    public Queue() {
+    public QueueGeneric() {
         this.front = null;
         this.rear = null;
     }
 
     // Metodo para encolar nodos.
-    public void enqueue(int value) {
-        Node newNode = new Node(value);
+    public void enqueue(T value) {
+        NodeGeneric<T> newNode = new NodeGeneric<T>(value);
         if(isEmpty()) {
             front = newNode;
             rear = newNode;
@@ -27,11 +27,11 @@ public class Queue {
     }
 
     // Desencolar
-    public Node dequeue() {
+    public NodeGeneric<T> dequeue() {
         if(isEmpty()) {
             throw new NoSuchElementException("La cola esta vacia");
         }
-        Node node = front;
+        NodeGeneric<T> node = front;
         front = front.getNext();
         if(front == null) {
             rear = null;
@@ -40,7 +40,7 @@ public class Queue {
     }
 
     // Devuelve
-    public Node peek(){
+    public NodeGeneric<T> peek(){
         if(isEmpty()) {
             throw new NoSuchElementException();
         }
@@ -52,7 +52,7 @@ public class Queue {
     }
 
     public void printQueue() {
-        Node current = front;
+        NodeGeneric<T> current = front;
         while(current != null) {
             System.out.println(current.getValue());
             current = current.getNext();
@@ -61,7 +61,7 @@ public class Queue {
 
     public int getSize() {
         int size = 0;
-        Node current = front;
+        NodeGeneric<T> current = front;
         while(current != null) {
             size++;
             current = current.getNext();

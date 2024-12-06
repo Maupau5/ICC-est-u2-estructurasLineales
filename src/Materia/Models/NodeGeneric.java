@@ -11,7 +11,7 @@ public class NodeGeneric<T> {
 
     @Override
     public String toString() {
-        return "Node [value=" + value + ", next=" + next + "]";
+        return "Node [value=" + value + "]";
     }
 
     public T getValue() {

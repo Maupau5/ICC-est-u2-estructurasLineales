@@ -1,4 +1,5 @@
 import Materia.Queues.Queue;
+import Materia.Queues.QueueGeneric;
 import Materia.Stacks.Stack;
 import Materia.Stacks.StackGeneric;
 import Models.Pantalla;
@@ -7,7 +8,8 @@ public class App {
     public static void main(String[] args) throws Exception {
         //runStack();
         //runStackGeneric();
-        runQueue();
+        //runQueue();
+        runQueueGeneric();
     }
 
     public static void runStack() {
@@ -64,5 +66,25 @@ public class App {
         System.out.println(cola.dequeue());
         System.out.println(cola.dequeue());
         System.out.println(cola.peek());
+
+        cola.printQueue();
+        System.out.println(cola.getSize());
+    }
+
+    public static void runQueueGeneric() {
+        QueueGeneric cola = new QueueGeneric<>();
+        cola.enqueue(10);
+        cola.enqueue(20);
+        cola.enqueue(30);
+        cola.enqueue(40);
+
+        System.out.println(cola.peek());
+        System.out.println(cola.dequeue());
+        System.out.println(cola.dequeue());
+        System.out.println(cola.peek());
+
+        cola.printQueue();
+        System.out.println(cola.getSize());
+        
     }
 }
