@@ -1,8 +1,9 @@
 package Materia.Queues;
 
+import java.util.EmptyStackException;
 import java.util.NoSuchElementException;
 
-import Materia.Models.NodeGeneric;
+import Materia.Nodes.NodeGeneric;
 
 public class QueueGeneric<T> {
     private NodeGeneric<T> front; //Nodo al frente de la cola
@@ -37,6 +38,15 @@ public class QueueGeneric<T> {
             rear = null;
         }
         return node;
+    }
+
+    public NodeGeneric<T> dequeueNode() {
+        if (isEmpty()) {
+            throw new EmptyStackException();
+        }
+        NodeGeneric<T> value = front;
+        front = front.getNext();
+        return value;
     }
 
     // Devuelve

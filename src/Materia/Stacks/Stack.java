@@ -2,7 +2,7 @@ package Materia.Stacks;
 
 import java.util.EmptyStackException;
 
-import Materia.Models.Node;
+import Materia.Nodes.Node;
 
 public class Stack {
     private Node top; // Nodo en la cima de nuestra pila.
