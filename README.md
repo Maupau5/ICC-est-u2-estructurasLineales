@@ -131,6 +131,4 @@ java App
 
 ---
 
-¡Explora y utiliza estas soluciones para aprender más sobre estructuras de datos en Java!
-
 
